@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlConverter", "SqlConverter\SqlConverter.csproj", "{DAF29D44-DBF0-46A9-A793-B4B057BC361B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbAccess", "DbAccess\DbAccess.csproj", "{FE0A7EE3-6B1C-4534-A36B-C9E3184BAD13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAF29D44-DBF0-46A9-A793-B4B057BC361B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF29D44-DBF0-46A9-A793-B4B057BC361B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF29D44-DBF0-46A9-A793-B4B057BC361B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF29D44-DBF0-46A9-A793-B4B057BC361B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE0A7EE3-6B1C-4534-A36B-C9E3184BAD13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE0A7EE3-6B1C-4534-A36B-C9E3184BAD13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE0A7EE3-6B1C-4534-A36B-C9E3184BAD13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE0A7EE3-6B1C-4534-A36B-C9E3184BAD13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9BEBB6E4-5A82-49A4-9F74-C2C5DC88E1D4}
+	EndGlobalSection
+EndGlobal
