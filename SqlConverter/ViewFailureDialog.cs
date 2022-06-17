@@ -5,11 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using CCWin;
 using DbAccess;
 
 namespace Converter
 {
-    public partial class ViewFailureDialog : Form
+    public partial class ViewFailureDialog : Skin_Color
     {
         public ViewFailureDialog()
         {

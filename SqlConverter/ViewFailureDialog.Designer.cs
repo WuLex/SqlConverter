@@ -38,7 +38,7 @@ namespace Converter
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(14, 14);
+            this.label1.Location = new System.Drawing.Point(33, 83);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(736, 46);
@@ -47,7 +47,7 @@ namespace Converter
             // 
             // txtSQL
             // 
-            this.txtSQL.Location = new System.Drawing.Point(18, 69);
+            this.txtSQL.Location = new System.Drawing.Point(37, 138);
             this.txtSQL.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSQL.Multiline = true;
             this.txtSQL.Name = "txtSQL";
@@ -57,7 +57,7 @@ namespace Converter
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(638, 278);
+            this.btnCancel.Location = new System.Drawing.Point(657, 347);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(112, 35);
@@ -68,7 +68,7 @@ namespace Converter
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(516, 278);
+            this.btnOK.Location = new System.Drawing.Point(535, 347);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(112, 35);
@@ -83,7 +83,7 @@ namespace Converter
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(772, 332);
+            this.ClientSize = new System.Drawing.Size(808, 426);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtSQL);

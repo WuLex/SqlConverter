@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using CCWin;
 using DbAccess;
 
 namespace Converter
@@ -13,7 +14,7 @@ namespace Converter
     /// The dialog allows the user to select which tables to include in the 
     /// converstion process.
     /// </summary>
-    public partial class TableSelectionDialog : Form
+    public partial class TableSelectionDialog : Skin_Color
     {
         #region Constructors
         public TableSelectionDialog()

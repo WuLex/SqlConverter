@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CSkin.NET" Version="16.1.14.4" />
     <PackageReference Include="log4net" Version="2.0.14" />
   </ItemGroup>
 

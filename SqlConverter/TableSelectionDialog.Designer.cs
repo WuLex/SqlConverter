@@ -52,13 +52,13 @@ namespace Converter
             this.grdTables.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colInclude,
             this.colTableName});
-            this.grdTables.Location = new System.Drawing.Point(18, 18);
+            this.grdTables.Location = new System.Drawing.Point(28, 58);
             this.grdTables.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grdTables.Name = "grdTables";
             this.grdTables.RowHeadersVisible = false;
             this.grdTables.RowHeadersWidth = 51;
             this.grdTables.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.grdTables.Size = new System.Drawing.Size(610, 505);
+            this.grdTables.Size = new System.Drawing.Size(628, 552);
             this.grdTables.TabIndex = 0;
             // 
             // colInclude
@@ -82,7 +82,7 @@ namespace Converter
             // btnSelectAll
             // 
             this.btnSelectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSelectAll.Location = new System.Drawing.Point(18, 532);
+            this.btnSelectAll.Location = new System.Drawing.Point(28, 619);
             this.btnSelectAll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSelectAll.Name = "btnSelectAll";
             this.btnSelectAll.Size = new System.Drawing.Size(112, 35);
@@ -94,7 +94,7 @@ namespace Converter
             // btnDeselectAll
             // 
             this.btnDeselectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDeselectAll.Location = new System.Drawing.Point(140, 532);
+            this.btnDeselectAll.Location = new System.Drawing.Point(150, 619);
             this.btnDeselectAll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDeselectAll.Name = "btnDeselectAll";
             this.btnDeselectAll.Size = new System.Drawing.Size(134, 35);
@@ -107,7 +107,7 @@ namespace Converter
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(514, 532);
+            this.btnCancel.Location = new System.Drawing.Point(542, 619);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(114, 35);
@@ -119,7 +119,7 @@ namespace Converter
             // btnOK
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOK.Location = new System.Drawing.Point(392, 532);
+            this.btnOK.Location = new System.Drawing.Point(420, 619);
             this.btnOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(114, 35);
@@ -134,7 +134,7 @@ namespace Converter
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(650, 580);
+            this.ClientSize = new System.Drawing.Size(686, 674);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDeselectAll);

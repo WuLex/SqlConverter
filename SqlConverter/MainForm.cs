@@ -9,10 +9,11 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using DbAccess;
+using CCWin;
 
 namespace Converter
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Skin_Color
     {
         #region Constructor
         public MainForm()

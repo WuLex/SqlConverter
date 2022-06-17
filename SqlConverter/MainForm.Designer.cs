@@ -55,7 +55,7 @@ namespace Converter
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 31);
+            this.label1.Location = new System.Drawing.Point(35, 62);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(185, 20);
@@ -64,7 +64,7 @@ namespace Converter
             // 
             // txtSqlAddress
             // 
-            this.txtSqlAddress.Location = new System.Drawing.Point(231, 26);
+            this.txtSqlAddress.Location = new System.Drawing.Point(248, 57);
             this.txtSqlAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSqlAddress.Name = "txtSqlAddress";
             this.txtSqlAddress.Size = new System.Drawing.Size(642, 27);
@@ -74,7 +74,7 @@ namespace Converter
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 158);
+            this.label2.Location = new System.Drawing.Point(30, 189);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 20);
@@ -83,7 +83,7 @@ namespace Converter
             // 
             // txtSQLitePath
             // 
-            this.txtSQLitePath.Location = new System.Drawing.Point(231, 151);
+            this.txtSQLitePath.Location = new System.Drawing.Point(248, 182);
             this.txtSQLitePath.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSQLitePath.Name = "txtSQLitePath";
             this.txtSQLitePath.Size = new System.Drawing.Size(642, 27);
@@ -92,7 +92,7 @@ namespace Converter
             // 
             // btnBrowseSQLitePath
             // 
-            this.btnBrowseSQLitePath.Location = new System.Drawing.Point(889, 147);
+            this.btnBrowseSQLitePath.Location = new System.Drawing.Point(906, 178);
             this.btnBrowseSQLitePath.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBrowseSQLitePath.Name = "btnBrowseSQLitePath";
             this.btnBrowseSQLitePath.Size = new System.Drawing.Size(112, 35);
@@ -104,7 +104,7 @@ namespace Converter
             // btnStart
             // 
             this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnStart.Location = new System.Drawing.Point(548, 332);
+            this.btnStart.Location = new System.Drawing.Point(565, 410);
             this.btnStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(297, 35);
@@ -122,7 +122,7 @@ namespace Converter
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(115, 117);
+            this.label3.Location = new System.Drawing.Point(132, 148);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 20);
@@ -134,7 +134,7 @@ namespace Converter
             this.cboDatabases.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDatabases.Enabled = false;
             this.cboDatabases.FormattingEnabled = true;
-            this.cboDatabases.Location = new System.Drawing.Point(231, 109);
+            this.cboDatabases.Location = new System.Drawing.Point(248, 140);
             this.cboDatabases.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboDatabases.Name = "cboDatabases";
             this.cboDatabases.Size = new System.Drawing.Size(642, 28);
@@ -143,7 +143,7 @@ namespace Converter
             // 
             // btnSet
             // 
-            this.btnSet.Location = new System.Drawing.Point(884, 23);
+            this.btnSet.Location = new System.Drawing.Point(901, 54);
             this.btnSet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSet.Name = "btnSet";
             this.btnSet.Size = new System.Drawing.Size(112, 35);
@@ -155,7 +155,7 @@ namespace Converter
             // pbrProgress
             // 
             this.pbrProgress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pbrProgress.Location = new System.Drawing.Point(18, 300);
+            this.pbrProgress.Location = new System.Drawing.Point(35, 378);
             this.pbrProgress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbrProgress.Name = "pbrProgress";
             this.pbrProgress.Size = new System.Drawing.Size(978, 28);
@@ -164,7 +164,7 @@ namespace Converter
             // lblMessage
             // 
             this.lblMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblMessage.Location = new System.Drawing.Point(18, 272);
+            this.lblMessage.Location = new System.Drawing.Point(35, 350);
             this.lblMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(794, 20);
@@ -174,7 +174,7 @@ namespace Converter
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancel.Location = new System.Drawing.Point(854, 332);
+            this.btnCancel.Location = new System.Drawing.Point(871, 410);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(142, 35);
@@ -186,7 +186,7 @@ namespace Converter
             // cbxEncrypt
             // 
             this.cbxEncrypt.AutoSize = true;
-            this.cbxEncrypt.Location = new System.Drawing.Point(22, 195);
+            this.cbxEncrypt.Location = new System.Drawing.Point(39, 226);
             this.cbxEncrypt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxEncrypt.Name = "cbxEncrypt";
             this.cbxEncrypt.Size = new System.Drawing.Size(95, 24);
@@ -197,7 +197,7 @@ namespace Converter
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(231, 192);
+            this.txtPassword.Location = new System.Drawing.Point(248, 223);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -209,7 +209,7 @@ namespace Converter
             // 
             this.cbxIntegrated.Checked = true;
             this.cbxIntegrated.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxIntegrated.Location = new System.Drawing.Point(28, 66);
+            this.cbxIntegrated.Location = new System.Drawing.Point(45, 97);
             this.cbxIntegrated.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxIntegrated.Name = "cbxIntegrated";
             this.cbxIntegrated.Size = new System.Drawing.Size(195, 32);
@@ -220,7 +220,7 @@ namespace Converter
             // 
             // txtUserDB
             // 
-            this.txtUserDB.Location = new System.Drawing.Point(297, 64);
+            this.txtUserDB.Location = new System.Drawing.Point(314, 95);
             this.txtUserDB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUserDB.Name = "txtUserDB";
             this.txtUserDB.Size = new System.Drawing.Size(172, 27);
@@ -229,7 +229,7 @@ namespace Converter
             // 
             // txtPassDB
             // 
-            this.txtPassDB.Location = new System.Drawing.Point(548, 63);
+            this.txtPassDB.Location = new System.Drawing.Point(565, 94);
             this.txtPassDB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassDB.Name = "txtPassDB";
             this.txtPassDB.PasswordChar = '*';
@@ -240,7 +240,7 @@ namespace Converter
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(231, 71);
+            this.lblUser.Location = new System.Drawing.Point(248, 102);
             this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(58, 20);
@@ -251,7 +251,7 @@ namespace Converter
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(497, 70);
+            this.lblPassword.Location = new System.Drawing.Point(514, 101);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(43, 20);
@@ -262,7 +262,7 @@ namespace Converter
             // cbxTriggers
             // 
             this.cbxTriggers.AutoSize = true;
-            this.cbxTriggers.Location = new System.Drawing.Point(22, 232);
+            this.cbxTriggers.Location = new System.Drawing.Point(39, 263);
             this.cbxTriggers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxTriggers.Name = "cbxTriggers";
             this.cbxTriggers.Size = new System.Drawing.Size(224, 24);
@@ -273,7 +273,7 @@ namespace Converter
             // cbxCreateViews
             // 
             this.cbxCreateViews.AutoSize = true;
-            this.cbxCreateViews.Location = new System.Drawing.Point(283, 229);
+            this.cbxCreateViews.Location = new System.Drawing.Point(300, 260);
             this.cbxCreateViews.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbxCreateViews.Name = "cbxCreateViews";
             this.cbxCreateViews.Size = new System.Drawing.Size(286, 24);
@@ -285,7 +285,7 @@ namespace Converter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 372);
+            this.ClientSize = new System.Drawing.Size(1050, 466);
             this.Controls.Add(this.cbxCreateViews);
             this.Controls.Add(this.cbxTriggers);
             this.Controls.Add(this.txtPassDB);
