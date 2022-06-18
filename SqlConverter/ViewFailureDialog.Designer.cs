@@ -83,7 +83,7 @@ namespace Converter
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(808, 426);
+            this.ClientSize = new System.Drawing.Size(844, 520);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtSQL);
@@ -95,6 +95,7 @@ namespace Converter
             this.Name = "ViewFailureDialog";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "ÌבÊ¾";
             this.ResumeLayout(false);
             this.PerformLayout();
 

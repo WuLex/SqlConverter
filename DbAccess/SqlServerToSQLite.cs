@@ -12,10 +12,9 @@ using log4net;
 namespace DbAccess
 {
     /// <summary>
-    /// This class is resposible to take a single SQL Server database
-    /// and convert it to an SQLite database file.
+    /// 此类负责获取单个SQL Server数据库并将其转换为SQLite数据库文件。
     /// </summary>
-    /// <remarks>The class knows how to convert table and index structures only.</remarks>
+    /// <remarks>该类只知道如何转换表和索引结构</remarks>
     public class SqlServerToSQLite
     {
         #region Public Properties
@@ -67,11 +66,11 @@ namespace DbAccess
                     _isActive = true;
                     ConvertSqlServerDatabaseToSQLiteFile(sqlServerConnString, sqlitePath, password, handler, selectionHandler, viewFailureHandler, createTriggers, createViews);
                     _isActive = false;
-                    handler(true, true, 100, "Finished converting database");
+                    handler(true, true, 100, "完成转换数据库");
                 }
                 catch (Exception ex)
                 {
-                    _log.Error("Failed to convert SQL Server database to SQLite database", ex);
+                    _log.Error("将SQL Server数据库转换为SQLite数据库失败", ex);
                     _isActive = false;
                     handler(true, false, 100, ex.Message);
                 } // catch

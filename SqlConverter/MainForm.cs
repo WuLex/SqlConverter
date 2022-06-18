@@ -93,7 +93,7 @@ namespace Converter
             UpdateSensitivity();
 
             string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            this.Text = "SQL Server To SQLite DB Converter (" + version + ")";
+            this.Text = "SQL Server To SQLite 数据库转换工具 (" + version + ")";
         }
 
 		private void txtSqlAddress_TextChanged(object sender, EventArgs e)
@@ -204,8 +204,7 @@ namespace Converter
                 List<TableSchema> updated = null;
                 Invoke(new MethodInvoker(delegate
                 {
-                    // Allow the user to select which tables to include by showing him the 
-                    // table selection dialog.
+                    // Allow the user to select which tables to include by showing him the table selection dialog.
                     TableSelectionDialog dlg = new TableSelectionDialog();
                     DialogResult res = dlg.ShowTables(schema, this);
                     if (res == DialogResult.OK)
