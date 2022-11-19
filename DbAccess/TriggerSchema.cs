@@ -9,13 +9,13 @@ namespace DbAccess
         Delete,
         Update,
         Insert
-    } 
+    }
 
     public enum TriggerType
     {
         After,
         Before
-    } 
+    }
 
     public class TriggerSchema
     {

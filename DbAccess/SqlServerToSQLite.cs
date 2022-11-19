@@ -18,6 +18,7 @@ namespace DbAccess
     public class SqlServerToSQLite
     {
         #region Public Properties
+
         /// <summary>
         /// Gets a value indicating whether this instance is active.
         /// </summary>
@@ -26,9 +27,11 @@ namespace DbAccess
         {
             get { return _isActive; }
         }
+
         #endregion
 
         #region Public Methods
+
         /// <summary>
         /// Cancels the conversion.
         /// </summary>
@@ -64,7 +67,8 @@ namespace DbAccess
                 try
                 {
                     _isActive = true;
-                    ConvertSqlServerDatabaseToSQLiteFile(sqlServerConnString, sqlitePath, password, handler, selectionHandler, viewFailureHandler, createTriggers, createViews);
+                    ConvertSqlServerDatabaseToSQLiteFile(sqlServerConnString, sqlitePath, password, handler,
+                        selectionHandler, viewFailureHandler, createTriggers, createViews);
                     _isActive = false;
                     handler(true, true, 100, "完成转换数据库");
                 }
@@ -77,9 +81,11 @@ namespace DbAccess
             });
             ThreadPool.QueueUserWorkItem(wc);
         }
+
         #endregion
 
         #region Private Methods
+
         /// <summary>
         /// Do the entire process of first reading the SQL Server schema, creating a corresponding
         /// SQLite schema, and copying all rows from the SQL Server database to the SQLite database.
@@ -112,7 +118,6 @@ namespace DbAccess
             // Add triggers based on foreign key constraints
             if (createTriggers)
                 AddTriggersForForeignKeys(sqlitePath, ds.Tables, password, handler);
-
         }
 
         /// <summary>
@@ -162,9 +167,11 @@ namespace DbAccess
                                     for (int j = 0; j < schema[i].Columns.Count; j++)
                                     {
                                         string pname = "@" + GetNormalizedName(schema[i].Columns[j].ColumnName, pnames);
-                                        insert.Parameters[pname].Value = CastValueForColumn(reader[j], schema[i].Columns[j]);
+                                        insert.Parameters[pname].Value =
+                                            CastValueForColumn(reader[j], schema[i].Columns[j]);
                                         pnames.Add(pname);
                                     }
+
                                     insert.ExecuteNonQuery();
                                     counter++;
                                     if (counter % 1000 == 0)
@@ -181,7 +188,8 @@ namespace DbAccess
                             CheckCancelled();
                             tx.Commit();
 
-                            handler(false, true, (int)(100.0 * i / schema.Count), "Finished inserting rows for table " + schema[i].TableName);
+                            handler(false, true, (int)(100.0 * i / schema.Count),
+                                "Finished inserting rows for table " + schema[i].TableName);
                             _log.Debug("finished inserting all rows for table [" + schema[i].TableName + "]");
                         }
                         catch (Exception ex)
@@ -332,6 +340,7 @@ namespace DbAccess
                 if (i < ts.Columns.Count - 1)
                     sb.Append(", ");
             } // for
+
             sb.Append(") VALUES (");
 
             List<string> pnames = new List<string>();
@@ -349,6 +358,7 @@ namespace DbAccess
                 // Remember the parameter name in order to avoid duplicates
                 pnames.Add(pname);
             } // for
+
             sb.Append(")");
             res.CommandText = sb.ToString();
             res.CommandType = CommandType.Text;
@@ -409,7 +419,8 @@ namespace DbAccess
                 return DbType.Binary;
             if (cs.ColumnType == "numeric")
                 return DbType.Double;
-            if (cs.ColumnType == "timestamp" || cs.ColumnType == "datetime" || cs.ColumnType == "datetime2" || cs.ColumnType == "date" || cs.ColumnType == "time")
+            if (cs.ColumnType == "timestamp" || cs.ColumnType == "datetime" || cs.ColumnType == "datetime2" ||
+                cs.ColumnType == "date" || cs.ColumnType == "time")
                 return DbType.DateTime;
             if (cs.ColumnType == "nchar" || cs.ColumnType == "char")
                 return DbType.String;
@@ -442,6 +453,7 @@ namespace DbAccess
                 if (i < ts.Columns.Count - 1)
                     sb.Append(", ");
             } // for
+
             sb.Append(" FROM " + ts.TableSchemaName + "." + "[" + ts.TableName + "]");
             return sb.ToString();
         }
@@ -483,9 +495,11 @@ namespace DbAccess
                         _log.Error("AddSQLiteTable failed", ex);
                         throw;
                     }
+
                     count++;
                     CheckCancelled();
-                    handler(false, true, (int)(count * 50.0 / schema.Tables.Count), "Added table " + dt.TableName + " to the SQLite database");
+                    handler(false, true, (int)(count * 50.0 / schema.Tables.Count),
+                        "Added table " + dt.TableName + " to the SQLite database");
 
                     _log.Debug("added schema for SQLite table [" + dt.TableName + "]");
                 } // foreach
@@ -505,12 +519,13 @@ namespace DbAccess
                             _log.Error("AddSQLiteView failed", ex);
                             throw;
                         } // catch
+
                         count++;
                         CheckCancelled();
-                        handler(false, true, 50 + (int)(count * 50.0 / schema.Views.Count), "Added view " + vs.ViewName + " to the SQLite database");
+                        handler(false, true, 50 + (int)(count * 50.0 / schema.Views.Count),
+                            "Added view " + vs.ViewName + " to the SQLite database");
 
                         _log.Debug("added schema for SQLite view [" + vs.ViewName + "]");
-
                     } // foreach
                 } // if
             } // using
@@ -610,6 +625,7 @@ namespace DbAccess
                     if (i < ts.PrimaryKey.Count - 1)
                         sb.Append(", ");
                 } // for
+
                 sb.Append(")\n");
             }
             else
@@ -623,7 +639,7 @@ namespace DbAccess
                 {
                     ForeignKeySchema foreignKey = ts.ForeignKeys[i];
                     string stmt = string.Format("    FOREIGN KEY ([{0}])\n        REFERENCES [{1}]([{2}])",
-                                foreignKey.ColumnName, foreignKey.ForeignTableName, foreignKey.ForeignColumnName);
+                        foreignKey.ColumnName, foreignKey.ForeignTableName, foreignKey.ForeignColumnName);
 
                     sb.Append(stmt);
                     if (i < ts.ForeignKeys.Count - 1)
@@ -671,6 +687,7 @@ namespace DbAccess
                 if (i < indexSchema.Columns.Count - 1)
                     sb.Append(", ");
             } // for
+
             sb.Append(")");
 
             return sb.ToString();
@@ -690,8 +707,9 @@ namespace DbAccess
             // Special treatment for IDENTITY columns
             if (col.IsIdentity)
             {
-                if (ts.PrimaryKey.Count == 1 && (col.ColumnType == "tinyint" || col.ColumnType == "int" || col.ColumnType == "smallint" ||
-                    col.ColumnType == "bigint" || col.ColumnType == "integer"))
+                if (ts.PrimaryKey.Count == 1 &&
+                    (col.ColumnType == "tinyint" || col.ColumnType == "int" || col.ColumnType == "smallint" ||
+                     col.ColumnType == "bigint" || col.ColumnType == "integer"))
                 {
                     sb.Append("integer PRIMARY KEY AUTOINCREMENT");
                     pkey = true;
@@ -707,9 +725,11 @@ namespace DbAccess
                 {
                     sb.Append(col.ColumnType);
                 }
+
                 if (col.Length > 0)
                     sb.Append("(" + col.Length + ")");
             }
+
             if (!col.IsNullable)
                 sb.Append(" NOT NULL");
 
@@ -806,7 +826,8 @@ namespace DbAccess
                 List<string> tblschema = new List<string>();
 
                 // This command will read the names of all tables in the database
-                SqlCommand cmd = new SqlCommand(@"select * from INFORMATION_SCHEMA.TABLES  where TABLE_TYPE = 'BASE TABLE'", conn);
+                SqlCommand cmd =
+                    new SqlCommand(@"select * from INFORMATION_SCHEMA.TABLES  where TABLE_TYPE = 'BASE TABLE'", conn);
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -855,7 +876,8 @@ namespace DbAccess
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand(@"SELECT TABLE_NAME, VIEW_DEFINITION  from INFORMATION_SCHEMA.VIEWS", conn);
+                SqlCommand cmd = new SqlCommand(@"SELECT TABLE_NAME, VIEW_DEFINITION  from INFORMATION_SCHEMA.VIEWS",
+                    conn);
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     int count = 0;
@@ -882,7 +904,6 @@ namespace DbAccess
                         _log.Debug("parsed view schema for [" + vs.ViewName + "]");
                     } // while
                 } // using
-
             } // using
 
             DatabaseSchema ds = new DatabaseSchema();
@@ -914,10 +935,11 @@ namespace DbAccess
             res.TableSchemaName = tschma;
             res.Columns = new List<ColumnSchema>();
             SqlCommand cmd = new SqlCommand(@"SELECT COLUMN_NAME,COLUMN_DEFAULT,IS_NULLABLE,DATA_TYPE, " +
-                @" (columnproperty(object_id(TABLE_NAME), COLUMN_NAME, 'IsIdentity')) AS [IDENT], " +
-                @"CHARACTER_MAXIMUM_LENGTH AS CSIZE " +
-                "FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '" + tableName + "' ORDER BY " +
-                "ORDINAL_POSITION ASC", conn);
+                                            @" (columnproperty(object_id(TABLE_NAME), COLUMN_NAME, 'IsIdentity')) AS [IDENT], " +
+                                            @"CHARACTER_MAXIMUM_LENGTH AS CSIZE " +
+                                            "FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '" + tableName +
+                                            "' ORDER BY " +
+                                            "ORDINAL_POSITION ASC", conn);
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
@@ -950,14 +972,15 @@ namespace DbAccess
                     // 'int' in its type name will be assigned an INTEGER affinity
                     if (dataType == "timestamp")
                         dataType = "blob";
-                    else if (dataType == "datetime" || dataType == "smalldatetime" || dataType == "date" || dataType == "datetime2" || dataType == "time")
+                    else if (dataType == "datetime" || dataType == "smalldatetime" || dataType == "date" ||
+                             dataType == "datetime2" || dataType == "time")
                         dataType = "datetime";
                     else if (dataType == "decimal")
                         dataType = "numeric";
                     else if (dataType == "money" || dataType == "smallmoney")
                         dataType = "numeric";
                     else if (dataType == "binary" || dataType == "varbinary" ||
-                        dataType == "image")
+                             dataType == "image")
                         dataType = "blob";
                     else if (dataType == "tinyint")
                         dataType = "smallint";
@@ -1089,7 +1112,8 @@ namespace DbAccess
                 dataType == "binary" || dataType == "smalldatetime" ||
                 dataType == "smallmoney" || dataType == "money" ||
                 dataType == "tinyint" || dataType == "uniqueidentifier" ||
-                dataType == "xml" || dataType == "sql_variant" || dataType == "datetime2" || dataType == "date" || dataType == "time" ||
+                dataType == "xml" || dataType == "sql_variant" || dataType == "datetime2" || dataType == "date" ||
+                dataType == "time" ||
                 dataType == "decimal" || dataType == "nchar" || dataType == "datetime")
                 return;
             throw new ApplicationException("Validation failed for data type [" + dataType + "]");
@@ -1129,12 +1153,12 @@ namespace DbAccess
                     replaced = true;
                 }
             }
+
             if (replaced)
                 return "(" + sb.ToString() + ")";
             else
                 return sb.ToString();
         }
-
 
 
         /// <summary>
@@ -1216,7 +1240,7 @@ namespace DbAccess
                 if (!m.Success)
                 {
                     throw new ApplicationException("Illegal key name [" + p + "] in index [" +
-                        indexName + "]");
+                                                   indexName + "]");
                 }
 
                 string key = m.Groups[1].Value;
@@ -1266,9 +1290,11 @@ namespace DbAccess
 
             return connstring;
         }
+
         #endregion
 
         #region Trigger related
+
         private static void AddTriggersForForeignKeys(string sqlitePath, IEnumerable<TableSchema> schema,
             string password, SqlConversionHandler handler)
         {
@@ -1290,7 +1316,6 @@ namespace DbAccess
                         throw;
                     }
                 }
-
             } // using
 
             _log.Debug("finished adding triggers to schema");
@@ -1305,6 +1330,7 @@ namespace DbAccess
                 cmd.ExecuteNonQuery();
             }
         }
+
         #endregion
 
         /// <summary>
@@ -1321,11 +1347,13 @@ namespace DbAccess
         }
 
         #region Private Variables
+
         private static bool _isActive = false;
         private static bool _cancelled = false;
         private static Regex _keyRx = new Regex(@"(([a-zA-Z_äöüÄÖÜß0-9\.]|(\s+))+)(\(\-\))?");
         private static Regex _defaultValueRx = new Regex(@"\(N(\'.*\')\)");
         private static ILog _log = LogManager.GetLogger(typeof(SqlServerToSQLite));
+
         #endregion
     }
 

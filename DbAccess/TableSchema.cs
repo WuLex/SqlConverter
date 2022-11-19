@@ -14,7 +14,7 @@ namespace DbAccess
 
         public List<string> PrimaryKey;
 
-    	public List<ForeignKeySchema> ForeignKeys;
+        public List<ForeignKeySchema> ForeignKeys;
 
         public List<IndexSchema> Indexes;
     }

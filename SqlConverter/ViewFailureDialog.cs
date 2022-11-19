@@ -23,7 +23,7 @@ namespace Converter
             set
             {
                 _view = value;
-                this.Text = "SQL Error: "+_view.ViewName;
+                this.Text = "SQL Error: " + _view.ViewName;
                 txtSQL.Text = _view.ViewSQL;
             }
         }

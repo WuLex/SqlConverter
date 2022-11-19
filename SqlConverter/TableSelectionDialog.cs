@@ -17,13 +17,16 @@ namespace Converter
     public partial class TableSelectionDialog : Skin_Color
     {
         #region Constructors
+
         public TableSelectionDialog()
         {
             InitializeComponent();
         }
+
         #endregion
 
         #region Public Properties
+
         /// <summary>
         /// Returns the list of included table schema objects.
         /// </summary>
@@ -42,9 +45,11 @@ namespace Converter
                 return res;
             }
         }
+
         #endregion
 
         #region Public Methods
+
         /// <summary>
         /// Opens the table selection dialog and uses the specified schema list in order
         /// to update the tables grid.
@@ -57,9 +62,11 @@ namespace Converter
             UpdateGuiFromSchema(schema);
             return this.ShowDialog(owner);
         }
+
         #endregion
 
         #region Event Handlers
+
         private void btnOK_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
@@ -87,9 +94,11 @@ namespace Converter
                 row.Cells[0].Value = true;
             } // foreach
         }
+
         #endregion
 
         #region Private Methods
+
         private void UpdateGuiFromSchema(List<TableSchema> schema)
         {
             grdTables.Rows.Clear();
@@ -99,6 +108,7 @@ namespace Converter
                 grdTables.Rows[grdTables.Rows.Count - 1].Tag = table;
             } // foreach
         }
+
         #endregion
     }
 }
